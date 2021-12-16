@@ -1,0 +1,47 @@
+### Valid candidate post
+POST http://localhost:8000/candidate/
+Content-Type: application/json
+
+{
+  "first_name": "asdf",
+  "last_name": "asdas",
+  "date_of_birth": "1990-12-29",
+  "industry": 2,
+  "annual_income": 60000,
+  "years_of_experience": 2
+}
+
+### get candidate by id
+GET http://localhost:8000/candidate/2
+
+### get all candidates
+GET http://localhost:8000/candidate/all
+
+### update candidate valid
+PUT http://localhost:8000/candidate/
+Content-Type: application/json
+
+{
+  "id": 1,
+  "first_name": "bbbbbbb",
+  "last_name": "aaaaaaaaaaa",
+  "date_of_birth": "1996-12-29",
+  "industry": 1,
+  "annual_income": 60000,
+  "years_of_experience": 5
+}
+
+### delete candidate
+DELETE http://localhost:8000/candidate/2
+
+### get all candidates pagination, sorting and filtering
+GET http://localhost:8000/candidate/all?count=4&page=1&sort-by=-first_name
+
+### average age by industry
+GET http://localhost:8000/candidate/metrics/average-age-by-industry
+
+### average salary by industry
+GET http://localhost:8000/candidate/metrics/average-salary-by-industry
+
+### average salary by years of experience
+GET http://localhost:8000/candidate/metrics/average-salary-by-experience
